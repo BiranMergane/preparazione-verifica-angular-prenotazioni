@@ -4,11 +4,12 @@ import { Prenotazioni } from './models/prenotazioni.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { ListaPrenotazioniComponent } from './lista-prenotazioni/lista-prenotazioni.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, ListaPrenotazioniComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
