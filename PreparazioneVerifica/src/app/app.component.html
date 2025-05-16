@@ -28,3 +28,18 @@
   Ora Prenotazione:
   <input type="time" #ora>
 </p>
+
+<div>
+  @for(pre of vettPrenotazioni; track pre)
+  {
+    <br>
+    <hr>
+    <p>{{pre.nome}}</p>
+    <p>{{pre.cognome}}</p>
+    <p>{{pre.indirizzo}}</p>
+    <p>{{pre.telefono}}</p>
+    <p>{{pre.email}}</p>
+    <p>{{pre.data}}</p>
+    <p>{{pre.ora}}</p>
+  }
+</div>
