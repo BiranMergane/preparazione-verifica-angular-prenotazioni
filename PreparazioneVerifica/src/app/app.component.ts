@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ListaPrenotazioniComponent } from './lista-prenotazioni/lista-prenotazioni.component';
+import { HtmlParser } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,10 @@ export class AppComponent implements OnInit {
   constructor(http: HttpClient){this.http = http}
 
 
-
+salva(nome: HTMLInputElement, cognome: HTMLInputElement, indirizzo: HTMLInputElement, email: HTMLInputElement, telefono: HTMLInputElement, data: HTMLInputElement, ora: HTMLInputElement){
+  this.vettPrenotazioni.push(new Prenotazioni(nome.value, cognome.value, indirizzo.value, telefono.value, email.value, data.value, ora.value ))
+  console.log(this.vettPrenotazioni)
+}
 makeGet()
 {
   this.loading = true

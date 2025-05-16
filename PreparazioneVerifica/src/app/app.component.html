@@ -10,7 +10,7 @@
 </p>
 <p>
   Indirizzo:
-  <input type="text" #inidirzzo>
+  <input type="text" #indirizzo>
 </p>
 <p>
   Telefono:
@@ -29,6 +29,7 @@
   <input type="time" #ora>
 </p>
 
+<button (click)="salva(nome, cognome, indirizzo, telefono, email, data, ora)">Salva</button>
 <div>
   @for(pre of vettPrenotazioni; track pre)
   {
