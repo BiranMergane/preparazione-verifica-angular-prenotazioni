@@ -1,3 +1,7 @@
-<p>
+<p (click) = "mostra_dett()">
     {{prenotazione.data}}  {{prenotazione.ora}} ----  {{prenotazione.nome}}  {{prenotazione.cognome}}
 </p>
+@if(dettagli)
+{
+    <app-dettagli-prenotazione [dettagli] = "prenotazione"></app-dettagli-prenotazione>
+}
