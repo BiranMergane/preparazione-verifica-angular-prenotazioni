@@ -1,40 +1,63 @@
-<h1>Form di inserimento</h1>
+<div class="container mt-4">
+  <div class="bg-primary text-white p-4 rounded shadow-sm mb-4">
+    <h1 class="m-0">Form di inserimento</h1>
+  </div>
 
-<p>
-  Nome:
-  <input type="text" #nome>
-</p>
-<p>
-  Cognome:
-  <input type="text" #cognome>
-</p>
-<p>
-  Indirizzo:
-  <input type="text" #indirizzo>
-</p>
-<p>
-  Telefono:
-  <input type="number" #telefono>
-</p>
-<p>
-  Email:
-  <input type="text" #email>
-</p>
-<p>
-  Data Prenotazione:
-  <input type="date" #data>
-</p>
-<p>
-  Ora Prenotazione:
-  <input type="time" #ora>
-</p>
+  <div class="card border-primary shadow-sm">
+    <div class="card-body">
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Nome:</label>
+          <input type="text" class="form-control border-primary" #nome />
+        </div>
 
-<button (click)="salva(nome, cognome, indirizzo, telefono, email, data, ora)">Salva</button>
-<div>
-  @for(pre of vettPrenotazioni; track pre)
-  {
-    <br>
-    <hr>
-    <app-lista-prenotazioni [prenotazione]="pre"></app-lista-prenotazioni>
-  }
+        <div class="mb-3">
+          <label class="form-label">Cognome:</label>
+          <input type="text" class="form-control border-primary" #cognome />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Indirizzo:</label>
+          <input type="text" class="form-control border-primary" #indirizzo />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Telefono:</label>
+          <input type="number" class="form-control border-primary" #telefono />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email:</label>
+          <input type="text" class="form-control border-primary" #email />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Data Prenotazione:</label>
+          <input type="date" class="form-control border-primary" #data />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Ora Prenotazione:</label>
+          <input type="time" class="form-control border-primary" #ora />
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-success w-100"
+          (click)="salva(nome, cognome, indirizzo, telefono, email, data, ora)"
+        >
+          💾 Salva Prenotazione
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <h4 class="text-primary">Prenotazioni salvate</h4>
+    @for(pre of vettPrenotazioni; track pre) {
+      <div class="my-3 p-3 border-start border-4 border-success bg-light rounded">
+        <app-lista-prenotazioni [prenotazione]="pre"></app-lista-prenotazioni>
+      </div>
+    }
+  </div>
 </div>
